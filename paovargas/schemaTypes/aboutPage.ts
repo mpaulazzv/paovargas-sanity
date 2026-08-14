@@ -28,8 +28,16 @@ export default defineType({
         defineField({
           name: 'backgroundImage',
           title: 'Imagen de fondo',
+          description: 'Misma imagen que el hero de la página de inicio',
           type: 'image',
           options: {hotspot: true},
+          validation: (rule) => rule.required(),
+        }),
+        defineField({
+          name: 'title',
+          title: 'Título',
+          type: 'string',
+          initialValue: 'Conóceme',
           validation: (rule) => rule.required(),
         }),
         defineField({
@@ -39,18 +47,6 @@ export default defineType({
           type: 'string',
           initialValue: 'No llegué a la imagen por la moda. Llegué por necesidad.',
           validation: (rule) => rule.required(),
-        }),
-        defineField({
-          name: 'ctaLabel',
-          title: 'Texto del botón',
-          type: 'string',
-          initialValue: 'Conoce el método',
-        }),
-        defineField({
-          name: 'ctaHref',
-          title: 'Enlace del botón',
-          type: 'string',
-          initialValue: '/metodo',
         }),
       ],
     }),
