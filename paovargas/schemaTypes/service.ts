@@ -143,7 +143,7 @@ export default defineType({
       title: 'Enlace del botón (página de servicios)',
       type: 'string',
       group: 'detail',
-      initialValue: '/contacto',
+      initialValue: 'https://wa.me/573108227389',
     }),
   ],
   orderings: [

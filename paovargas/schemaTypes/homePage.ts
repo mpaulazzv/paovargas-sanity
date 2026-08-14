@@ -298,7 +298,7 @@ export default defineType({
           name: 'privacyLink',
           title: 'Enlace de política de privacidad',
           type: 'string',
-          initialValue: '/contacto',
+          initialValue: 'mailto:paolavargasasesoradeimagen@gmail.com',
         }),
       ],
     }),

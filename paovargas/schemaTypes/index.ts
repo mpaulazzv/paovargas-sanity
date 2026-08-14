@@ -7,6 +7,7 @@ import homePage from './homePage'
 import servicesPage from './servicesPage'
 import blogPage from './blogPage'
 import aboutPage from './aboutPage'
+import methodPage from './methodPage'
 import siteSettings from './siteSettings'
 
 // Contenido enriquecido
@@ -26,6 +27,7 @@ export const schemaTypes = [
   servicesPage,
   blogPage,
   aboutPage,
+  methodPage,
   siteSettings,
 
   // Colecciones
