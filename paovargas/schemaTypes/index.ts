@@ -17,6 +17,7 @@ import blockContent from './blockContent'
 import highlightedTitle from './objects/highlightedTitle'
 import link from './objects/link'
 import methodStep from './objects/methodStep'
+import camino from './objects/camino'
 import seo from './objects/seo'
 import socialLink from './objects/socialLink'
 import faqItem from './objects/faqItem'
@@ -43,6 +44,7 @@ export const schemaTypes = [
   highlightedTitle,
   link,
   methodStep,
+  camino,
   seo,
   socialLink,
   faqItem,
