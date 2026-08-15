@@ -76,6 +76,15 @@ export default defineType({
           of: [defineArrayMember({type: 'text', rows: 4})],
           validation: (rule) => rule.required().min(1),
         }),
+        defineField({
+          name: 'image',
+          title: 'Imagen',
+          description: 'Imagen grande a la derecha del texto, entra con una animación de deslizamiento',
+          type: 'image',
+          options: {hotspot: true},
+          fields: [defineField({name: 'alt', title: 'Texto alternativo', type: 'string'})],
+          validation: (rule) => rule.required(),
+        }),
       ],
     }),
     defineField({
@@ -116,6 +125,15 @@ export default defineType({
           type: 'string',
           initialValue: '/metodo',
         }),
+        defineField({
+          name: 'image',
+          title: 'Imagen',
+          description: 'Imagen grande a la izquierda del texto, entra con una animación de deslizamiento',
+          type: 'image',
+          options: {hotspot: true},
+          fields: [defineField({name: 'alt', title: 'Texto alternativo', type: 'string'})],
+          validation: (rule) => rule.required(),
+        }),
       ],
     }),
     defineField({
@@ -140,9 +158,10 @@ export default defineType({
         defineField({
           name: 'items',
           title: 'Credenciales',
+          description: 'Cuadrícula de 4 tarjetas, cada una con su imagen',
           type: 'array',
-          of: [defineArrayMember({type: 'string'})],
-          validation: (rule) => rule.required().min(1),
+          of: [defineArrayMember({type: 'formacionItem'})],
+          validation: (rule) => rule.required().min(4).max(4),
         }),
         defineField({
           name: 'note',

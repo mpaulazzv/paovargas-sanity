@@ -21,6 +21,7 @@ import camino from './objects/camino'
 import seo from './objects/seo'
 import socialLink from './objects/socialLink'
 import faqItem from './objects/faqItem'
+import formacionItem from './objects/formacionItem'
 
 export const schemaTypes = [
   // Páginas (singleton)
@@ -48,4 +49,5 @@ export const schemaTypes = [
   seo,
   socialLink,
   faqItem,
+  formacionItem,
 ]
