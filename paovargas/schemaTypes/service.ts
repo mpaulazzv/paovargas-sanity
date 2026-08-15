@@ -130,6 +130,15 @@ export default defineType({
       validation: (rule) => rule.required().min(1),
     }),
     defineField({
+      name: 'incluye',
+      title: 'Qué incluye',
+      description: 'Lista de elementos incluidos en el servicio',
+      type: 'array',
+      of: [{type: 'string'}],
+      group: 'detail',
+      validation: (rule) => rule.required().min(1),
+    }),
+    defineField({
       name: 'nota',
       title: 'Nota bajo el botón',
       description: 'Aclaración opcional (ej. sobre el personal shopper, o cupo limitado)',
