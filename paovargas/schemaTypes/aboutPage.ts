@@ -226,6 +226,15 @@ export default defineType({
           of: [defineArrayMember({type: 'text', rows: 3})],
           validation: (rule) => rule.required().min(1),
         }),
+        defineField({
+          name: 'image',
+          title: 'Imagen',
+          description: 'Imagen grande a la izquierda del texto, entra con una animación de deslizamiento',
+          type: 'image',
+          options: {hotspot: true},
+          fields: [defineField({name: 'alt', title: 'Texto alternativo', type: 'string'})],
+          validation: (rule) => rule.required(),
+        }),
       ],
     }),
     defineField({
