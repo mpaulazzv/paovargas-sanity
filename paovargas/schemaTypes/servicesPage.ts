@@ -122,7 +122,7 @@ export default defineType({
           name: 'ctaHref',
           title: 'Enlace del botón',
           type: 'string',
-          initialValue: '/#test-gratuito',
+          initialValue: '/quiz',
         }),
       ],
     }),
