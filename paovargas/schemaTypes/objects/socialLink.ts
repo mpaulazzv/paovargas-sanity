@@ -9,9 +9,9 @@ export default defineType({
   fields: [
     defineField({
       name: 'label',
-      title: 'Etiqueta',
-      description: 'Ej. IG, IN, YT, TT',
-      type: 'string',
+      title: 'Logo',
+      description: 'Imagen o logo de la red social',
+      type: 'image',
       validation: (rule) => rule.required(),
     }),
     defineField({
