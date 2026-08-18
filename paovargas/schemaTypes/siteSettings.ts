@@ -22,6 +22,13 @@ export default defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+      name: 'logo',
+      title: 'Logo',
+      description: 'Reservado para cuando se reemplace el nombre en texto del header por un logo.',
+      type: 'image',
+      group: 'brand',
+    }),
+    defineField({
       name: 'tagline',
       title: 'Tagline',
       type: 'string',
