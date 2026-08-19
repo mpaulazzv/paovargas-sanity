@@ -91,6 +91,13 @@ export default defineType({
       initialValue: 'Sesiones online en todo el mundo',
     }),
     defineField({
+      name: 'headerNavLinks',
+      title: 'Enlaces de navegación (header)',
+      type: 'array',
+      group: 'navigation',
+      of: [defineArrayMember({type: 'link'})],
+    }),
+    defineField({
       name: 'footerNavLinks',
       title: 'Enlaces de navegación (footer)',
       type: 'array',
