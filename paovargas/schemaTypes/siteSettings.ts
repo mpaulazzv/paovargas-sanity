@@ -112,6 +112,14 @@ export default defineType({
       of: [defineArrayMember({type: 'socialLink'})],
     }),
     defineField({
+      name: 'footerLogo',
+      title: 'Logo del pie de página',
+      description:
+        'Reemplaza el nombre en texto (firma) del pie de página. El fondo del footer es oscuro, así que usa una versión clara/blanca del logo.',
+      type: 'image',
+      group: 'footer',
+    }),
+    defineField({
       name: 'copyright',
       title: 'Copyright',
       type: 'string',
