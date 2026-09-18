@@ -21,17 +21,28 @@ export default defineType({
     defineField({
       name: 'hero',
       title: 'Sección 1 · Hero',
-      description: 'Hero grande de foto completa, igual al de la página de inicio',
+      description: 'Carrusel de fotos junto al texto de presentación',
       type: 'object',
       group: 'hero',
       fields: [
         defineField({
-          name: 'backgroundImage',
-          title: 'Imagen de fondo',
-          description: 'Misma imagen que el hero de la página de inicio',
-          type: 'image',
-          options: {hotspot: true},
-          validation: (rule) => rule.required(),
+          name: 'images',
+          title: 'Imágenes del carrusel',
+          description: 'Se muestran de a dos en escritorio y de a una en móvil, en orden y en bucle',
+          type: 'array',
+          of: [
+            defineArrayMember({
+              type: 'image',
+              options: {hotspot: true},
+              fields: [
+                defineField({
+                  name: 'alt',
+                  title: 'Texto alternativo',
+                  type: 'string',
+                }),
+              ],
+            }),
+          ],
         }),
         defineField({
           name: 'title',
