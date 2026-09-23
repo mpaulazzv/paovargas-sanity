@@ -167,7 +167,7 @@ export default defineType({
           validation: (rule) => rule.required(),
         }),
         defineField({
-          name: 'description',
+          name: 'body',
           title: 'Descripción',
           type: 'text',
           rows: 2,

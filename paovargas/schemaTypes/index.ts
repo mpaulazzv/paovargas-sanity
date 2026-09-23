@@ -5,6 +5,7 @@ import category from './category'
 import service from './service'
 import homePage from './homePage'
 import servicesPage from './servicesPage'
+import corporatePage from './corporatePage'
 import blogPage from './blogPage'
 import aboutPage from './aboutPage'
 import methodPage from './methodPage'
@@ -23,11 +24,14 @@ import seo from './objects/seo'
 import socialLink from './objects/socialLink'
 import faqItem from './objects/faqItem'
 import formacionItem from './objects/formacionItem'
+import corporateService from './objects/corporateService'
+import corporateWhyItem from './objects/corporateWhyItem'
 
 export const schemaTypes = [
   // Páginas (singleton)
   homePage,
   servicesPage,
+  corporatePage,
   blogPage,
   aboutPage,
   methodPage,
@@ -52,4 +56,6 @@ export const schemaTypes = [
   socialLink,
   faqItem,
   formacionItem,
+  corporateService,
+  corporateWhyItem,
 ]

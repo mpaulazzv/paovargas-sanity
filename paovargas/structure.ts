@@ -3,6 +3,7 @@ import type {StructureResolver} from 'sanity/structure'
 export const SINGLETON_TYPES = new Set([
   'homePage',
   'servicesPage',
+  'corporatePage',
   'blogPage',
   'aboutPage',
   'methodPage',
@@ -24,6 +25,10 @@ export const structure: StructureResolver = (S) =>
         .title('Página de servicios')
         .id('servicesPage')
         .child(S.document().schemaType('servicesPage').documentId('servicesPage')),
+      S.listItem()
+        .title('Página: Servicios corporativos')
+        .id('corporatePage')
+        .child(S.document().schemaType('corporatePage').documentId('corporatePage')),
       S.listItem()
         .title('Página de blog')
         .id('blogPage')
