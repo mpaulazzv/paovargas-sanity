@@ -22,12 +22,6 @@ export default defineType({
       group: 'hero',
       fields: [
         defineField({
-          name: 'eyebrow',
-          title: 'Etiqueta superior',
-          type: 'string',
-          initialValue: 'Servicios Corporativos · Imagen Profesional',
-        }),
-        defineField({
           name: 'heading',
           title: 'Título',
           type: 'string',
@@ -46,9 +40,17 @@ export default defineType({
         defineField({
           name: 'signature',
           title: 'Línea de firma',
-          description: 'Línea inferior del hero, separada por una raya. Ej. nombre, cargo y credencial',
+          description: 'Línea inferior del hero. Ej. nombre, cargo y credencial',
           type: 'string',
-          initialValue: 'Paola Vargas · Coach de Imagen e Identidad · Presidenta de AICI Colombia',
+          initialValue: 'Paola Vargas · Coach de Imagen e Identidad · Presidente de AICI Colombia',
+        }),
+        defineField({
+          name: 'image',
+          title: 'Imagen del hero',
+          description: 'Vertical 4:5 · 1600 × 2000 px. Va a la derecha del título, con animación de entrada.',
+          type: 'image',
+          options: {hotspot: true},
+          fields: [defineField({name: 'alt', title: 'Texto alternativo', type: 'string'})],
         }),
       ],
     }),
@@ -60,31 +62,30 @@ export default defineType({
       fields: [
         defineField({
           name: 'eyebrow',
-          title: 'Etiqueta superior',
+          title: 'Título de la sección',
           type: 'string',
           initialValue: 'Por qué invertir en la imagen del equipo',
         }),
         defineField({
           name: 'heading',
-          title: 'Título',
+          title: 'Subtítulo',
+          description: 'Se muestra en cursiva, debajo del título',
           type: 'string',
           initialValue: 'La primera impresión de su empresa se construye persona a persona.',
           validation: (rule) => rule.required(),
         }),
         defineField({
-          name: 'body',
-          title: 'Texto',
-          type: 'text',
-          rows: 6,
-          initialValue:
-            'Cada colaborador que representa a la organización —en una reunión comercial, una entrevista, un evento o una aparición pública— proyecta un mensaje sobre la marca. Cuando esa imagen es coherente, cuidada y alineada con el rol, transmite criterio, seriedad y confianza. Mi trabajo es lograr que su gente proyecte lo que la empresa vale.',
-          validation: (rule) => rule.required(),
+          name: 'paragraphs',
+          title: 'Párrafos',
+          type: 'array',
+          of: [defineArrayMember({type: 'text', rows: 4})],
+          validation: (rule) => rule.required().min(1),
         }),
         defineField({
           name: 'highlightedText',
           title: 'Fragmento destacado',
           description:
-            'Fragmento del texto anterior que se resalta. Debe estar escrito igual dentro del texto para que se vea resaltado.',
+            'Fragmento de los párrafos anteriores que se resalta en negrita. Debe estar escrito igual para que coincida.',
           type: 'string',
           initialValue: 'coherente, cuidada y alineada con el rol',
         }),
@@ -98,20 +99,29 @@ export default defineType({
       fields: [
         defineField({
           name: 'eyebrow',
-          title: 'Etiqueta superior',
+          title: 'Título de la sección',
           type: 'string',
           initialValue: 'Servicios para su organización',
         }),
         defineField({
           name: 'heading',
-          title: 'Título',
+          title: 'Subtítulo',
+          description: 'Se muestra en cursiva, debajo del título',
           type: 'string',
           initialValue: 'Cuatro formas de trabajar con su equipo o su personal aliado.',
           validation: (rule) => rule.required(),
         }),
         defineField({
+          name: 'cardLinkLabel',
+          title: 'Texto del enlace de las tarjetas',
+          description: 'Enlace que baja de cada tarjeta al detalle del servicio',
+          type: 'string',
+          initialValue: 'Ver el servicio',
+        }),
+        defineField({
           name: 'services',
           title: 'Servicios',
+          description: 'Cada uno se muestra como tarjeta arriba y como sección con imagen más abajo',
           type: 'array',
           of: [defineArrayMember({type: 'corporateService'})],
           validation: (rule) => rule.required().min(1),
@@ -126,21 +136,29 @@ export default defineType({
       fields: [
         defineField({
           name: 'eyebrow',
-          title: 'Etiqueta superior',
+          title: 'Título de la sección',
           type: 'string',
           initialValue: 'Por qué trabajar conmigo',
         }),
         defineField({
           name: 'heading',
-          title: 'Título',
+          title: 'Subtítulo',
+          description: 'Se muestra en cursiva, debajo del título',
           type: 'string',
           initialValue: 'Formación internacional y experiencia en el mundo corporativo.',
           validation: (rule) => rule.required(),
         }),
         defineField({
+          name: 'image',
+          title: 'Imagen de la sección',
+          description: 'Vertical 2:3 · 2160 × 3240 px. Va a la izquierda del texto, con animación de entrada.',
+          type: 'image',
+          options: {hotspot: true},
+          fields: [defineField({name: 'alt', title: 'Texto alternativo', type: 'string'})],
+        }),
+        defineField({
           name: 'items',
           title: 'Credenciales',
-          description: 'Se muestran en una cuadrícula de dos columnas',
           type: 'array',
           of: [defineArrayMember({type: 'corporateWhyItem'})],
           validation: (rule) => rule.required().min(1),
