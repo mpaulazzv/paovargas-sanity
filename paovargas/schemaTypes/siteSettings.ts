@@ -120,6 +120,22 @@ export default defineType({
       group: 'footer',
     }),
     defineField({
+      name: 'footerLogoSecondary',
+      title: 'Segundo logo del pie de página',
+      description:
+        'Se muestra al lado del logo anterior (por ejemplo, el de una asociación o certificación). El fondo es oscuro, así que usa una versión clara/blanca.',
+      type: 'image',
+      group: 'footer',
+      fields: [
+        defineField({
+          name: 'alt',
+          title: 'Texto alternativo',
+          description: 'Describe de qué es el logo, para lectores de pantalla',
+          type: 'string',
+        }),
+      ],
+    }),
+    defineField({
       name: 'copyright',
       title: 'Copyright',
       type: 'string',
