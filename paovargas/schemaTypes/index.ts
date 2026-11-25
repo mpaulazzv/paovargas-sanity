@@ -10,6 +10,7 @@ import blogPage from './blogPage'
 import aboutPage from './aboutPage'
 import methodPage from './methodPage'
 import quizPage from './quizPage'
+import styleQuiz from './styleQuiz'
 import siteSettings from './siteSettings'
 
 // Contenido enriquecido
@@ -36,6 +37,7 @@ export const schemaTypes = [
   aboutPage,
   methodPage,
   quizPage,
+  styleQuiz,
   siteSettings,
 
   // Colecciones
