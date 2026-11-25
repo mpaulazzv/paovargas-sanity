@@ -8,7 +8,6 @@ export const SINGLETON_TYPES = new Set([
   'aboutPage',
   'methodPage',
   'quizPage',
-  'styleQuiz',
   'siteSettings',
 ])
 
@@ -46,10 +45,6 @@ export const structure: StructureResolver = (S) =>
         .title('Quiz de imagen')
         .id('quizPage')
         .child(S.document().schemaType('quizPage').documentId('quizPage')),
-      S.listItem()
-        .title('Quiz de estilo')
-        .id('styleQuiz')
-        .child(S.document().schemaType('styleQuiz').documentId('styleQuiz')),
 
       S.divider(),
 
